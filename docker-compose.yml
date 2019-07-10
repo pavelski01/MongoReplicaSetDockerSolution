@@ -1,0 +1,33 @@
+version: '3.5'
+services:
+    mongo-node1:
+        container_name: mongo-node1
+        image: "mongo"
+        command: --replSet rs0
+        build: ./mongo-node1
+        networks: 
+            - mongo-net
+        volumes:
+            - ./mongo-node1/data:/usr/src
+        depends_on:
+            - "mongo-node2"
+            - "mongo-node3"
+
+    mongo-node2:
+        container_name: mongo-node2
+        image: "mongo"
+        command: --replSet rs0
+        networks:
+            - mongo-net
+
+    mongo-node3:
+        container_name: mongo-node3
+        image: "mongo"
+        command: --replSet rs0
+        networks: 
+            - mongo-net
+
+networks:
+    mongo-net:
+        name: mongo-net
+        driver: bridge
