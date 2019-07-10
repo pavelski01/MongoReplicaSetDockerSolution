@@ -4,7 +4,6 @@ Description: Following solution create three containers with MongoDb instance on
 
 To set up enviroment run following commands, based on docker-compose.yml file:
 
-  docker-compose up -d  
-  sleep 10  
-  docker-compose run mongo-node1 "/usr/src/replicaSet.sh"  
-  
+  &nbsp;&nbsp;&nbsp;&nbsp;docker-compose up -d  
+  &nbsp;&nbsp;&nbsp;&nbsp;sleep 10  
+  &nbsp;&nbsp;&nbsp;&nbsp;docker-compose run mongo-node1 "/usr/src/replicaSet.sh"    
